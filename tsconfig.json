@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "useUnknownInCatchVariables": true,
+
+    "baseUrl": "./src",
+    "target": "es6",
+    "module": "es6",
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*"]
+}
