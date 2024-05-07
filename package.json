@@ -1,7 +1,9 @@
 {
 	"scripts": {
 		"dev": "node-dev src/index.ts",
-		"build": "tsc"
+		"build": "tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.2.0",

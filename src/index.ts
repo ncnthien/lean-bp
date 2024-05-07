@@ -1,2 +1,1 @@
-console.log("Hello lean boiler plate");
-const a = 1;
+console.log('Hello lean boiler plate');
