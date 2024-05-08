@@ -11,11 +11,12 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "useUnknownInCatchVariables": true,
+    "esModuleInterop": true,
 
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "target": "es6",
-    "module": "es6",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "rootDir": "."
   },
   "include": ["src/**/*"]
 }
