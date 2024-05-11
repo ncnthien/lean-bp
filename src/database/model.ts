@@ -1,7 +1,7 @@
 import { Database } from './abstracts/database';
 import { Instance, Model } from './abstracts/model';
 
-export class ModelImpl implements Model {
+export class ModelImpl<T extends Instance> implements Model<T> {
   private database: Database;
   private modelName: string;
 
@@ -10,19 +10,19 @@ export class ModelImpl implements Model {
     this.modelName = modelName;
   }
 
-  get model(): Map<string, Instance> {
+  get model(): Map<string, T> {
     if (this.database.store.has(this.modelName)) {
-      return this.database.store.get(this.modelName) as Map<string, Instance>;
+      return this.database.store.get(this.modelName) as Map<string, T>;
     }
     throw new Error('Model not found');
   }
 
-  create(data: Instance): Instance {
+  create(data: T): T {
     this.model.set(data.id, data);
     return data;
   }
 
-  getByID(id: string): Instance | undefined {
+  getByID(id: string): T | undefined {
     this.model.forEach((instance) => {
       if (instance.id === id) {
         return instance;
@@ -32,11 +32,11 @@ export class ModelImpl implements Model {
     return undefined;
   }
 
-  getAll(): Instance[] {
+  getAll(): T[] {
     return Array.from(this.model.values());
   }
 
-  update(id: string, data: Instance): void {
+  update(id: string, data: T): void {
     this.model.set(id, data);
   }
 

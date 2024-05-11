@@ -7,8 +7,8 @@ class DatabaseImpl implements Database {
   store = new Map<string, Map<string, Instance[]>>();
 
   createModel<T extends Instance>(modelName: string): Model<T> {
-    this.store.set(modelName, new Map<string, Instance[]>());
-    return new ModelImpl(this, modelName);
+    this.store.set(modelName, new Map<string, T[]>());
+    return new ModelImpl<T>(this, modelName);
   }
 
   connect(): boolean {
