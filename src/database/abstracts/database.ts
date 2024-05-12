@@ -1,8 +1,8 @@
-import { Instance, Model } from './model';
+import { Instance } from 'src/model/abstracts/model.abstract';
 
 export interface Database {
-  store: Map<string, Map<string, Instance[]>>;
-  connect(): boolean;
-  disconnect(): boolean;
-  createModel<T extends Instance>(modelName: string): Model<T>;
+  connect(): Promise<boolean>;
+  disconnect(): Promise<boolean>;
+  createTable(tableName: string): Promise<void>;
+  create<T extends Instance>(tableName: string, data: T): Promise<T>;
 }
