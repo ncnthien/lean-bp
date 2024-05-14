@@ -1,5 +1,5 @@
 export type Instance = object & { id: string };
 
-export interface Model<T extends Instance> {
+export interface Repository<T extends Instance> {
   create(data: T): Promise<T>;
 }

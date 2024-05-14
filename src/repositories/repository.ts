@@ -1,7 +1,7 @@
 import { Database } from 'src/database/abstracts/database';
-import { Instance, Model } from './abstracts/model.abstract';
+import { Instance, Repository } from './abstracts/repository.abstract';
 
-export class ModelImpl<T extends Instance> implements Model<T> {
+export class ModelImpl<T extends Instance> implements Repository<T> {
   private database: Database;
   private tableName: string;
 

@@ -1,4 +1,4 @@
-import { Instance } from 'src/model/abstracts/model.abstract';
+import { Instance } from 'src/repositories/abstracts/repository.abstract';
 
 export interface Database {
   connect(): Promise<boolean>;
