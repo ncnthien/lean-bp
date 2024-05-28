@@ -1,10 +1,10 @@
-import { Usecase } from 'src/use-cases/abstracts/usecase';
+import { Usecase } from 'src/use-cases/abstracts/usecase.abstract';
 import { CreateTodoInputDTO } from './dtos/create_todo_input.dto';
-import { Server } from 'src/server/abstracts/server';
+import { Server } from 'src/server/abstracts/server.abstract';
 import { Database } from 'src/database/abstracts/database';
 import { CreateTodoOutputDTO } from './dtos/create_todo_output.dto';
 
-export class CreateTodoUsecase implements Usecase<CreateTodoInputDTO, CreateTodoOutputDTO> {
+export class CreateTodoUsecase implements Usecase {
   private server: Server;
   private database: Database;
 
